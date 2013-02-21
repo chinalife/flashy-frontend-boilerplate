@@ -1,0 +1,1 @@
+define("base",["aspect","attribute","class","events"],function(e,t,n){var r=e("class"),i=e("events"),s=e("aspect"),o=e("attribute");n.exports=r.create({Implements:[i,s,o],initialize:function(e){this.initAttrs(e)},destroy:function(){this.off();for(var e in this)this.hasOwnProperty(e)&&delete this[e]}})});
