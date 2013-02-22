@@ -1,0 +1,63 @@
+/*
+ * 对话框
+ */
+
+/*窗口*/
+.dialog{background:url(../img/dialog-title.png) #fff repeat-x; border:1px solid #4b4c4e; border-radius:8px; box-shadow:3px 3px 5px #999}
+
+/*标题*/
+.dialog-title{height:30px; line-height:30px; cursor:move; _cursor:default; *cursor:default}
+.dialog-title .title{float:left; margin-left:20px; color:#4a4d55; font-weight:bold}
+.dialog-title .close{float:right; margin:7px 15px 0 0; width:31px; height:17px; background:url(..img/dialog-button.png) -64px 0; text-decoration:none}
+
+/*内容*/
+.dialog-form{padding-top:10px; color:#4a4d55; overflow-x:hidden; overflow-y:auto}
+.dialog-form div.row{
+	padding: 0px 0px 20px 0px; 
+	height:28px
+}
+
+
+.dialog-form div.highlight{padding:5px 0; background:#e7f6f9}
+.dialog-form div.tips{height:13px; color:#959595}
+
+.dialog-form span.lable{float:left; height:28px; line-height:28px; text-align:right}
+.dialog-form span.form{float:left; height:28px}
+.dialog-form span.form input.text,
+.dialog-form span.form textarea{font-size:12px; font-family:Arial; outline:none; border:1px solid #ccc; border-radius:3px; color:#4a4d55}
+.dialog-form span.form input.text{height:26px; padding:0 0 0 5px; _line-height:26px; *line-height:26px; line-height:26px \9}
+.dialog-form span.form textarea{width:285px; height:70px}
+.dialog-form span.form object{vertical-align:middle}
+.dialog-form span.form span.error{color:red}
+.dialog-form span.form span.success{color:green}
+.dialog-form span.requre{color:red; font-weight:bold; font-family:Verdana}
+
+.dialog-form input,
+.dialog-form label{vertical-align:middle}
+.dialog-form a.insert{display:block; width:97px; height:23px; line-height:23px; background:url(../img/dialog-button.png) 0 -29px; text-align:center; text-decoration:none; color:#4a4d55}
+
+.dialog-form div.textarea{height:80px}
+.dialog-form div.pl130{padding-left:130px}
+.dialog-form div.pl100{padding-left:100px}
+.dialog-form span.lable{width:130px}
+.dialog-form span.form{width:420px}
+.dialog-form span.form input.text{width:285px}
+
+.dialog-form div.wide span.lable{width:100px}
+.dialog-form div.wide span.form{width:300px}
+.dialog-form div.wide span.form input.text{width:200px}
+
+.dialog-form div.tab-bar{margin:5px 0 0 15px; width:812px; height:28px; background:url(../img/dialog-button.png) 0 -108px}
+.dialog-form div.tab-bar a{float:left; margin-right:6px; width:96px; height:28px; line-height:28px; text-align:center; text-decoration:none; background:url(../img/dialog-button.png) 0 -80px; color:#4c4c54}
+.dialog-form div.tab-bar a.active{background:url(../img/dialog-button.png) 0 -52px; color:#0067ce}
+
+.dialog-form div.mid-tab{margin-left:15px; width:810px; padding:10px 0; border:1px #ccc solid; border-top:0}
+.dialog-form div.mid-tab div.wide{padding-top:3px; padding-bottom:3px; height:28px}
+
+/*底部*/
+.dialog-bottom{height:60px}
+.dialog-bottom a{float:right; margin:15px 15px 0 0; width:64px; height:29px; line-height:29px; background:url(../img/dialog-button.png); text-align:center; text-decoration:none; color:#fff}
+
+/*遮罩*/
+.dialog{position:absolute; z-index:101; top:50%; left:50%}
+.dialog-mask{z-index:100; position:absolute; top:0; left:0; width:100%; height:100%; background:#000; filter:alpha(opacity=20); -moz-opacity:0.2; opacity:0.2}

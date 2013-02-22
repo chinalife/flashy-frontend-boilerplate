@@ -1,0 +1,202 @@
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, group, menu, nav, section {
+	margin: 0;
+	padding: 0;
+}
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+	font: small/normal arial;
+}
+
+input, select, textarea {
+	vertical-align:middle;
+	font-size: 100%;
+	color:#666;
+}
+
+button, input {*overflow: visible;line-height: normal;}
+button::-moz-focus-inner,input::-moz-focus-inner {padding:0;border:0;}
+
+/* 去掉各Table  cell 的边距并让其边重合 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* IE bug fixed: th 不继承 text-align*/
+th {
+	text-align: inherit;
+}
+/* 去除默认边框 */
+fieldset, img {
+	border: 0;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+	display: block;
+}
+address, caption, cite, code, den, em, th, var {
+	font-style: normal;
+	font-weight: 500;
+}
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+	list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+	text-align: left;
+}
+/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+/*h1, h2, h3, h4, h5, h6 {
+	font:500 100%/1 Arial, "Microsoft Yahei", sans-serif;
+	font-weight:700\9; /* todo: make some font-family detection */
+
+
+q:before, q:after {
+	content: '';
+}
+
+/* 底部印刷体、版本等标记 */
+small {
+	font-size: 12px;
+	color: #888;
+}
+
+/* 去虚线框 */
+:focus{outline:none;}
+
+/* 清理浮动 */
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.clearfix {
+	*zoom: 1
+}
+
+/*
+Variable Grid System.
+Learn more ~ http://www.spry-soft.com/grids/
+Based on 960 Grid System - http://960.gs/
+Licensed under GPL and MIT.
+*/
+
+body{ min-width:1000px}
+
+/* layout container for the grid */
+.container{margin-left:auto;margin-right:auto;width:1000px;zoom:1;}
+
+/* grid system */
+.grid{display:inline;float:left;margin-left:5px;margin-right:5px}
+.grid-1{width:30px}
+.grid-2{width:80px}
+.grid-3{width:130px}
+.grid-4{width:180px}
+.grid-5{width:230px}
+.grid-6{width:280px}
+.grid-7{width:330px}
+.grid-8{width:380px}
+.grid-9{width:430px}
+.grid-10{width:480px}
+.grid-11{width:530px}
+.grid-12{width:580px}
+.grid-13{width:630px}
+.grid-14{width:680px}
+.grid-15{width:730px}
+.grid-16{width:780px}
+.grid-17{width:830px}
+.grid-18{width:880px}
+.grid-19{width:930px}
+.grid-20{width:980px;}
+
+/* clear extra spaces */
+.first{margin-left:0}
+.last{margin-right:0}
+
+/* Global
+ * author: jilijin@sogou-inc.com
+ */
+.visited a{color:#5500bb;}
+.red{color:#f50;}
+.green{color:#5ba533;}
+
+.invisible {visibility: hidden;}
+.fade {
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+  opacity: 0;
+}
+.in {
+  opacity: 1;
+}
+.collapse {
+  -webkit-transition: height 0.35s ease;
+  -moz-transition: height 0.35s ease;
+  -ms-transition: height 0.35s ease;
+  -o-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+.in {
+  height: auto;
+}
+.close {
+  float: right;
+  font-family:Impact!important;
+  _font-family:Tahoma!important;
+  font-size: 20px;
+  _font-size: 16px;
+  font-weight: blod;
+  line-height: 18px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.close:hover {
+  color: #000000;
+  text-decoration: none;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  cursor: pointer;
+}
+
+.fn-left{
+	float: left;
+}
+
+.fn-right{
+	float: right;
+}
+.fn-hide {display: none;}
+.fn-show{display: block;}

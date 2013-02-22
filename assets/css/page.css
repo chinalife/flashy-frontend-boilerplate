@@ -1,0 +1,666 @@
+body{
+    background: url(img/body-bg.png) #e8ecf2 repeat-x;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+#Wrap{margin:0 auto; width:1000px}
+#Head{height:75px}
+#Head a{color:#666}
+#Role,#Uname,#Logout{float:right; margin:40px 10px 0 0}
+#Logo{width:336px; height:40px; float:left; margin:17px 0 0 26px; background:url(img/logo.png)}
+#Nav{height:22px; padding:6px 0; margin-bottom:20px; text-align:center}
+#Nav a{display:inline-block; margin:0 18px; width:63px; height:22px; line-height:22px; color:#fff; font-size:14px; text-decoration:none; vertical-align:middle}
+#Nav a.active{color:#171f25; font-weight:bold; background:url(img/nav-active.png)}
+#Nav span{display:inline-block; width:1px; height:22px; font-size:0; background:url(img/nav-separator.png); vertical-align:middle}
+#Foot{height:80px; padding-top:20px; line-height:25px; text-align:center; color:#666}
+#Foot a{color:#666}
+
+#StepNav{width:100px; height:100px; position:relative}
+#StepNav div{position:absolute; top:0; width:254px; height:100px; background-image:url(img/step.png)}
+#StepNav .step1{left:0; z-index:1; background-position:0 0}
+#StepNav .step2{left:252px; z-index:2; background-position:-254px 0}
+#StepNav .step3{left:504px; z-index:3; background-position:-508px 0}
+#StepNav .step4{left:756px; z-index:4; background-position:-762px 0; width:244px}
+#StepNav .step1-active{background-position:0 -100px}
+#StepNav .step2-active{background-position:-254px -100px}
+#StepNav .step3-active{background-position:-508px -100px}
+#StepNav .step4-active{background-position:-762px -100px}
+
+/*按钮*/
+#UpdateBasicInfo,#Forward2Step2,#SaveAndForward2Step2,
+#BackToStep1,#ForwardToStep3,#BackToStep2,#preview,#publishClick,#NavAdmin{float:left; margin-right:10px}
+a.normalbtn{width:89px; height:36px; line-height:36px; background:url(img/btn.png) 0 -27px; text-align:center; text-decoration:none; color:#fff; font-size:14px; font-weight:bold; cursor:pointer}
+a.widebtn{width:114px; height:36px; line-height:36px; background:url(img/btn.png) 0 -63px; text-align:center; text-decoration:none; color:#fff; font-size:14px; font-weight:bold; cursor:pointer}
+
+/*步骤*/
+#Step1{margin-top:20px}
+#Step2 .hr{
+    height:30px; 
+    line-height:30px; 
+    padding-left:50px; 
+    background:#e8ecf2 url(img/arrow.png) 33px 9px no-repeat; 
+    color:#4a4d56; 
+    font-weight:bold
+}
+#Step2 .li{
+    height:40px; 
+    background: url(img/pointer.jpg) 33px 15px no-repeat;
+    line-height:40px; 
+    padding-left:50px; 
+    font-weight:bold; 
+    color:#4a4d56
+}
+#Step2 .li span{color:#008fd5}
+#Step2 .left-images{height: 256px;}
+#Step2 .images,
+#Step2 .right-images{width:980px; padding-left:40px; overflow:hidden;}
+/*#Step2 .images{height:260px}*/
+#Step2 .right-images{padding-bottom:20px}
+#Step2 .images-item{float:left; width:175px; height:115px; margin:0 10px 10px 0; border:1px #ccd1d4 solid; box-shadow:2px 2px 2px #eee; cursor:default}
+#Step2 .images-item:hover,
+#Step2 .images-item.active{border:2px #008dd5 solid; margin:0 8px 8px 0}
+#Step2 .right-images .images-item{width:120px; height:160px}
+#Step2 #selectBgColor{height:40px; line-height:40px; padding-left:33px}
+#Step2 #PreviewZone{padding:20px 0 20px 30px; overflow:hidden}
+
+#Step2 p.p-submit{height:40px; padding-top:15px; padding-left:400px}
+#Step3{margin-top:20px}
+/*#Step3 #EditZone{overflow:hidden; padding-left:90px}*/
+#Step3 div.p-submit{display:inline-block; *display:inline; zoom:1; height:40px; padding-top: 20px; padding-left:293px}
+#PZL-HI{width:570px; margin-right:20px}
+/*#PZR-HI{width:175px;}*/
+.success-msg{
+    background:url(img/success.png) no-repeat 340px 60px; 
+    padding:60px 0 30px 400px;
+}
+.success-msg h3{
+    font-size:18px; 
+    color:#8eb447;
+}
+.notice-msg {
+    margin-top: 6px;
+}
+.submit-msg{ 
+    height:40px; 
+    padding: 15px 0 75px 400px;
+}
+
+#publish-flow{
+	margin-bottom: 20px;
+}
+#basic-info{
+    width: 600px;
+    margin: 0 auto;
+}
+#publish{
+	width: 1000px;
+	background: #fff;
+	padding-bottom: 20px;
+	overflow:hidden;
+	clear: both;
+}
+#basic-form {
+    width: 830px;
+    margin: 0 auto;
+}
+}
+
+#editform input {
+	vertical-align: baseline;
+}
+#editform select {
+	margin-right: 8px;
+}
+.alert-cell{
+	margin-bottom: 15px;
+}
+
+
+/* form 表单
+ * require: button
+ */
+.ui-form{
+    font-family:serif\0/; /* solution:win7 ie8 line-height bug */
+}
+
+.form-input, .i-textarea{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    font-size:12px;
+    color:#4a4d55;
+    border:1px solid #ccc;
+    -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;  
+}
+
+.form-input-35{width:35px;}
+.form-input-90{width:90px;}
+.form-input-150{width:150px;}
+.form-input-230{width:230px;}
+.form-input-260{width:260px;}
+.form-input-300{width:300px;}
+
+.form-input, .form-input-small{height:26px;line-height:26px;padding:0 5px;}
+
+/*calendar by jilijin
+*/
+.ui-calendar {
+    position: absolute;
+    font: 16px/20px 'Xin Gothic', 'PT Sans', 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f9f9f9;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #dadada;
+    box-shadow: 1px 1px 9px #ccc;
+    text-align: center;
+}
+.ui-calendar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    width: 210px;
+    color:#333;
+    zoom: 1;
+}
+.ui-calendar ul:after {
+    display: block;
+    content: "";
+    visibility: hidden;
+    font-size: 0;
+    clear: both;
+    height: 0;
+}
+.ui-calendar li {
+    float: left;
+    text-align: center;
+    width: 30px;
+    padding: 3px 0;
+    cursor: pointer;
+}
+.ui-calendar .ui-calendar-navigation {
+    font-size: 14px;
+    border-bottom: 1px solid #dadada;
+}
+.ui-calendar .ui-calendar-month-year {
+    width: 90px;
+}
+.ui-calendar .month:hover, .ui-calendar .year:hover {
+    color: #d64;
+}
+.ui-calendar .ui-calendar-previous-year:hover,
+.ui-calendar .ui-calendar-previous-month:hover,
+.ui-calendar .ui-calendar-next-month:hover,
+.ui-calendar .ui-calendar-next-year:hover {
+    color: #d64;
+}
+
+.ui-calendar .ui-calendar-data-container {
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+}
+.ui-calendar .ui-calendar-date-column .previous-month,
+.ui-calendar .ui-calendar-date-column .next-month {
+    color: #ccc;
+}
+
+.ui-calendar .ui-calendar-year-column li,
+.ui-calendar .ui-calendar-month-column li {
+    width: 65px;
+    margin: 2px;
+    padding: 2px 0;
+    border-radius: 4px;
+}
+.ui-calendar li.ui-calendar-day-0,
+.ui-calendar li.ui-calendar-day-6 {
+    color: #d64;
+}
+.ui-calendar .ui-calendar-year-column li:hover,
+.ui-calendar .ui-calendar-month-column li:hover,
+.ui-calendar .ui-calendar-date-column li:hover {
+    color: #333;
+    background: #dadada;
+}
+.ui-calendar .ui-calendar-date-column .disabled-date {
+    background: #eee;
+    color: #bbb;
+    cursor: not-allowed;
+}
+.ui-calendar .ui-calendar-year-column li.focused-element,
+.ui-calendar .ui-calendar-month-column li.focused-element,
+.ui-calendar .ui-calendar-date-column li.focused-element {
+    color: #fff;
+    background: #d64;
+}
+.ui-calendar .ui-calendar-footer {
+    color: #999;
+}
+.ui-calendar .ui-calendar-today,
+.ui-calendar .ui-calendar-time {
+    width: auto;
+    padding: 3px 4px;
+}
+.ui-calendar .ui-calendar-time {
+    float: right;
+}
+/* ie fix */
+.ui-calendar ul,
+.ui-calendar .ui-calendar-data-container {
+    *float: left;
+    *clear: both;
+}
+
+
+/*给编辑区域加边框*/
+.edit-widget, .pz-hd-normal, .pz-ft-btn, .pz-hd-slide, .pz-hd-img, 
+.pz-hd-list, .pd-md-multi, .pz-md-part, .pz-md-tab,
+.pz-ft-form, .pz-ft-table, .pz-rt-img, .pz-rt-video{
+    position: relative;
+    border: 1px solid #008dd5;
+    cursor:pointer;
+}
+
+/*选择页面把边框去掉*/
+.bg-style{
+    border: 0px;
+    margin-bottom: 0px;
+}
+
+/*给编辑区域右上角加图片*/
+.edit-style{
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 110px;
+    height: 19px;
+    background: url(img/edit.png) no-repeat;
+}
+
+/*管理,统计*/
+#admin-wrap,
+#role-wrap,
+#stat-wrap{width:940px; padding:10px 30px 30px 30px; background:#fff}
+#stat-wrap{width:960px; padding:10px 20px 30px 20px}
+#stat-wrap .table-wrap{width:960px}
+#tips{height:100px; line-height:100px; color:#666; text-align:center; font-size:14px}
+#query-bar{height:40px; line-height:40px}
+#query-bar select, #query-bar input, #query-bar label, #query-bar a{float:left}
+#query-bar input{font-size:12px; font-family:Arial; outline:none; border:1px solid #ccc; border-radius:3px; color:#4a4d55;
+height:18px; margin:10px 10px 0 0; padding:0 0 0 5px; _line-height:18px; *line-height:18px; line-height:18px \9}
+#query-bar input#projection-str{width:100px}
+#query-bar input#keyword{width:100px}
+#query-bar select{margin:10px 5px 0 0}
+#query-bar .btn{margin:6px 0 0 10px; width:65px; height:27px; line-height:27px; background:url(img/btn.png); text-align:center; text-decoration:none; color:#fff; font-size:14px; font-weight:bold}
+
+/*表格*/
+.table-wrap{border:1px #ccd1d5 solid; width:940px}
+.table-wrap table{width:100%; border:0; border-collapse:collapse; color:#4a4a4a}
+.table-wrap th,
+.table-wrap td{padding:8px; border:1px #e4e8e9 solid}
+.table-wrap th{background:#e5f4fb; text-align:center; font-weight:bold}
+.table-wrap tr th{border-top:0}
+.table-wrap tr th:first-child,
+.table-wrap tr td:first-child{border-left:0}
+.table-wrap tr th:last-child,
+.table-wrap tr td:last-child{border-right:0}
+.table-wrap tr:last-child td{border-bottom:0}
+.table-wrap tr.sum{background:#f6f9ff}
+.table-wrap td.center{text-align:center}
+.table-wrap a{color:#06c; text-decoration:underline}
+
+/*页码*/
+.page{height:40px; line-height:40px; color:#333}
+.page .page-size{float:left}
+.page .page-no{float:right; margin-top:9px}
+.page span{float:left}
+.page .row-count{margin-left:20px}
+.page select{float:left; margin:11px 5px 0 5px}
+.ui-pager ul{border-color:#a7bfd1}
+.ui-pager li{color:#3a6aad}
+.ui-pager .ui-pager-hover, .ui-pager .ui-pager-press, .ui-pager .ui-pager-active {background:#cee1ef}
+
+/*中部tab编辑框*/
+.tab-bar{
+    margin:5px 0 0 25px; 
+    height:28px; 
+    background:url(../img/dialog-button.png) 0 -108px;
+}
+.tab-bar li{
+    float:left; 
+    margin-right:6px; 
+    width:96px; 
+    height:28px; 
+    line-height:28px; 
+    text-align:center; 
+    text-decoration:none; 
+    background:url(../img/dialog-button.png) 0 -80px; color:#4c4c54;
+}
+.tab-bar > li.active{
+    background:url(../img/dialog-button.png) 0 -52px; 
+    color:#0067ce
+}
+
+.mid-tab{
+    margin-left:25px;   
+    padding:10px 0; 
+    border:1px #ccc solid; 
+    border-top:0
+}
+#mid-multi-form .mid-tab{
+    width:700px; 
+}
+#mid-multi-form .tab-bar{
+    width:702px;
+}
+#mid-tab-form .mid-tab{
+    width: 950px;
+}
+#mid-tab-form .tab-bar{
+    width: 952px;
+}
+
+.tab-content > .tab-pane {
+    display: none;
+}
+.tab-content > .active {
+    display: block;
+}
+
+.tab-bar a:hover {
+    color: #5BA533;
+    text-decoration: none;
+}
+
+/*表单form样式*/
+.ui-form-item {
+    padding: 1px 0px 15px 140px;
+    _padding: 1px 0px 15px 120px;
+    zoom: 1;
+    overflow: hidden;
+    font-family: tahoma, '宋体', '黑体', "Hei", sans-serif;
+}
+
+.ui-label {
+    line-height: 16px;
+    float: left;
+    width: 170px;
+    margin-left: -170px;
+    padding-top: 3px;
+    text-align: right;
+    font-size: 14px;
+    color:#535353;
+}
+.ui-dialog-label {
+    display: inline;
+    float: left;
+    width: 120px;
+    margin-left: -120px;
+    height: 28px;
+    line-height: 28px;
+    text-align: right;
+}
+
+.ui-tab-label{
+    display: inline;
+    width: 120px;
+    margin-left:10px;
+    height: 28px;
+    line-height: 28px;
+    text-align: right;
+}
+
+textarea.i-textarea {
+    width: 300px;
+    height: 79px;
+    _height: 74px;
+    line-height: 1.6;
+    _line-height: 1.5;
+    padding: 1px 5px 0 5px;
+    _padding: 1px 2px 0 5px;
+    overflow: auto;
+    font-family: Tahoma;
+}
+
+.highlight{
+    background:#e7f6f9;
+}
+
+.kv-form {
+    margin-left: 150px;
+}
+
+.multi-form{
+    padding-left: 120px;
+}
+.multi-tab-form{
+    padding-left: 160px;
+}
+.table-form, .tab-form {
+    padding-left: 20px;
+}
+.multi-label{
+    width: 150px;
+    margin-left: -150px;
+}
+.search-form{
+    padding-left: 160px;
+}
+
+.logo-form{
+    padding: 1px 0px 0px 110px;
+    _padding: 1px 0px 0px 110px;
+}
+
+.kv-label{
+    width: 200px;
+}
+.renew-label{
+    width: 170px;
+}
+
+.ui-form-item-error .form-input {
+    border: 1px red solid;
+    color: #FF5243;
+}
+
+.ui-form-required {
+    margin-right: 2px;
+    font-family: SimSun;
+    font-size: 14px;
+    color: red;
+}
+.ui-form-explain{ 
+    padding:3px 0 0 0; 
+    _padding-top:3px; 
+    *margin-top:-1px; 
+    _margin-left:3px; 
+    font-size:12px; 
+    line-height: 18px;
+    color:#B2B2B2
+}
+.ui-form-item-error .ui-form-explain{
+    color:#FF5243; 
+    background-position:-186px 6px;
+}
+.ui-form-item-error .ui-form-explain, 
+.ui-form-item-warn .ui-form-explain, 
+.ui-form-item-success .ui-form-explain {
+    background-image: url(img/ui-fm.png);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.ui-form-item a.insert{
+    display:block; 
+    width:97px; 
+    height:23px; 
+    line-height:23px; 
+    background:url(img/dialog-button.png) 0 -29px; 
+    text-align:center; 
+    text-decoration:none; 
+    color:#4a4d55
+}
+
+.ui-form-item select {
+    border: 1px solid #CCC;
+    background-color: #ffffff;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 26px;
+    padding: 4px;
+    margin-right: 8px;
+    height: 26px;
+}
+
+.ui-form-content {
+display: inline-block;
+*display: inline;
+*zoom:1;
+}
+
+/*日期选择图标*/
+.date-picker {
+    width: 142px;
+    background: white url(img/datePicker.gif) no-repeat right;
+}
+
+/*给select定宽度*/
+.swidth {
+    width: 150px;
+}
+/*flash上传按钮对齐*/
+.flash-input{
+    vertical-align: top;
+}
+
+/*字节倒数*/
+span.ks-letter-count {
+    color: #999;
+    line-height: 18px;
+    font-size: 12px;
+}
+span.ks-letter-count-exceed{
+    color: #f00;
+    line-height: 18px;
+    font-size: 12px;
+}
+span.ks-letter-count em {
+    color: #999;
+    display: inline-block;
+    padding: 5px 6px;
+    font-size: 12px;
+    line-height: 14px;
+    width: 28px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #F0F0F0;
+    -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+span.ks-letter-count-exceed em {
+    color: #F00;
+    display: inline-block;
+    padding: 5px 6px;
+    font-size: 12px;
+    line-height: 14px;
+    width: 28px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #F0F0F0;
+    -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+.controls-row {
+  *zoom: 1;
+}
+
+.controls-row:before,
+.controls-row:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.controls-row:after {
+  clear: both;
+}
+
+.controls-row .ui-form-item {
+  float: left;
+}
+.controls-row [class*="form-input"] + [class*="form-input"] {
+    margin-left: 10px;
+}
+
+.dailog-table td {
+    padding: 0 10px 10px 0;
+}
+
+#foot-table-form, #dialog-role, #head-right-list-form, #foot-button-form,
+#head-right-image-form, #head-left-image-form{
+    margin-left: 50px;
+}
+
+.table-row{
+    height: 30px;
+    line-height: 30px;
+    color: #4A4D56;
+    font-weight: bold;
+}
+
+#updatOnlineTime {
+    margin-top: 20px;
+}
+
+.select-radio label{
+    float: left;
+    color: #555;
+    display: block;
+}
+
+.dailog-table td{
+    vertical-align: top;
+}
+
+.select-radio {
+    background-color: #F7F7F7;
+    background-image: -moz-linear-gradient(top, #FAFAFA, #F2F2F2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FAFAFA), to(#F2F2F2));
+    background-image: -webkit-linear-gradient(top, #FAFAFA, #F2F2F2);
+    background-image: -o-linear-gradient(top, #FAFAFA, #F2F2F2);
+    background-image: linear-gradient(to bottom, #FAFAFA,#F2F2F2);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFAFAFA', endColorstr='#FFF2F2F2', GradientType=0);
+    border-top: 1px solid white;
+    border-bottom: 1px solid #CCC;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-right-radius: 4px;
+    height: 25px;
+    padding: 5px 15px 5px 25px;
+}
+
+.only-right-zone, .pz-materail {
+    width: 175px;
+    margin: 0 auto;
+    float: none;
+}
+
+.middle-align {
+    vertical-align: middle;
+}
+
+.success, .error {
+    color:#FF5243; 
+}
